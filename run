@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run -d --name jackett \
+-v /docker/config/jackett:/config \
+-v /docker/downloads/complete:/downloads \
+-v /etc/localtime:/etc/localtime:ro \
+-e PGID=1001 -e PUID=1001 \
+-e TZ=US/Eastern \
+-p 9117:9117 \
+djavanargent/alpine-jackett
