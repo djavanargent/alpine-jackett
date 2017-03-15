@@ -10,6 +10,7 @@ Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRa
 docker create --name=jackett \
 -v <path to data>:/config \
 -v <path to blackhole>:/downloads \
+-v /etc/localtime:/etc/localtime:ro \
 -e PGID=<gid> -e PUID=<uid> \
 -e TZ=<timezone> \
 -p 9117:9117 \
